@@ -110,6 +110,39 @@ ul {
     border: 2px solid white;
     transition-delay: .5s;
 }
+.spikes {
+    position: relative;
+}
+.spikes::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    /* this is necessay to make the arrow of the spike eaten so make sure the height us greater than the linear  */
+    height: 30px;
+    z-index: 1;
+    /* u can make the background darker to make the spike seen  */
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+                       linear-gradient(225deg, white 25%, transparent 25%);
+    /* change background-size:  to change the size of the spike */
+    background-size: 30px 30px;
+}
+/* that is why we made each section position relative not to go out of the section */
+.dots {
+    background-image: url(../imgs/dots.png);
+    height: 186px;
+    width: 204px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.dots-up {
+    top: 200px;
+    right: 0;
+}
+.dots-down {
+    bottom: 200px;
+    left: 0;
+}
 /* End Global Rules  */
 /* Start header  */
     .header {
@@ -1628,3 +1661,12 @@ initially make the flexbasis 100% then from 991 make it half plus in the form ma
         }
     }
 /* End Animation  */
+/* The End  */
+/* it was about rtl (form rigth to left): there are 2 things : content(it needs programming language) and positions(this is css stuff and the f.f is about it) 
+before flex (in float) it was hard but not now once you "body {direction: rtl}" the flex do most of the work
+changes include: the fill of the header a changed from right to left, the margin-right of "other links" to margin-left, the arrow of the article box from rigth to left, 
+the image of .testimonials to right(    left: -10px;), .team .box::before, .team .box::after {left:0},.team .box .info {padding-right: 80px;}, in service box the number bring
+it to right and the details to the left, .our-skills .skills .the-progress span {right: 0;}, .work-steps .image {margin-left: 100px;} and w8ees
+and finally light house check */
+/* jezakellah 5eyra Elzero */
+/* The End  */
